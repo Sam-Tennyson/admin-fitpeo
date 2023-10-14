@@ -1,10 +1,14 @@
+// libs
 import React from 'react'
-import { DASHBOARD_OPTIONS } from '../../shared/Constants'
-import { Link } from 'react-router-dom'
-import { IMAGES } from '../../shared/Images'
+import { Link, useNavigate } from 'react-router-dom'
 import { Avatar } from '@material-tailwind/react'
 
+// constants
+import { DASHBOARD_OPTIONS } from '../../shared/Constants'
+import { IMAGES } from '../../shared/Images'
+
 const Sidebar = () => {
+    const navigate = useNavigate();
     return (
         <>
             <div className='relative'>
@@ -16,8 +20,10 @@ const Sidebar = () => {
                 </div>
                 <aside className='flex flex-col text-xs'>
                     {DASHBOARD_OPTIONS.map((item) => (
-                        <div className='cursor-pointer flex items-center justify-between text-light-blue p-3 hover:rounded-md hover:bg-lighter-blue hover:text-white' key={item?.id}>
-                            <Link to={item?.path} className='flex items-center'>
+                        <div className='cursor-pointer flex items-center justify-between text-light-blue p-3 hover:rounded-md hover:bg-lighter-blue hover:text-white' key={item?.id}
+                            onClick={()=>navigate(item?.path)}
+                        >
+                            <Link  className='flex items-center'>
                                 {item?.icon}
                                 <span className='ml-2'>{item?.value}</span>
                             </Link>
@@ -29,11 +35,11 @@ const Sidebar = () => {
                         </div>
                     ))}
                 </aside>
-                <div className='fixed bottom-10'>
-                    <div className='text-xs flex items-center justify-between bottom-0 p-2 bg-lighter-blue rounded-md text-white mb-2 lg:w-48  w-44'>
+                <div className='fixed bottom-10 left-0  lg:w-full lg-block  w-64 p-2 '>
+                    <div className='flex items-center justify-between bottom-0 p-2 bg-lighter-blue rounded-md text-white mb-2 '>
                         <div className="flex items-center justify-start gap-1">
                             <Avatar src={IMAGES.avatarImage} alt="avatar" size='xs' />
-                            <div className='flex flex-col'>
+                            <div className='flex flex-col text-sm'>
                                 <span>Evano</span>
                                 <span>Project Manager</span>
                             </div>
