@@ -3,7 +3,7 @@ import React from 'react'
 const SearchBar = () => {
 	return (
 		<>
-			<form>
+			<form className='mb-2'>
 				<label htmlFor="default-search" className="mb-2 text-sm font-medium sr-only">Search</label>
 				<div className="relative">
 					<div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

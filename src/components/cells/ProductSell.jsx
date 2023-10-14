@@ -2,6 +2,8 @@ import React from 'react'
 import SearchBar from '../atoms/SearchBar'
 import CustomTable from '../atoms/CustomTable'
 import { Avatar, Typography } from '@material-tailwind/react'
+import { DROPDOWN_DATA } from '../../shared/Constants'
+import CustomSelect from '../atoms/CustomSelect'
 
 const ProductColumn = ({ row, value }) => (
 	<div key={row?.id} className="flex items-center gap-3">
@@ -101,9 +103,13 @@ const ProductSell = () => {
 	return (
 		<>
 			<div className='p-4 bg-white rounded-md' >
-				<div className="flex justify-between items-center">
-					<h2 className='custom-heading-class'>Product Sell</h2>
+				<div className="flex justify-between items-center flex-wrap">
+					<h2 className='custom-heading-class mb-2'>Product Sell</h2>
+					<div className='flex flex-wrap mb-2'>
+
 					<SearchBar />
+					<CustomSelect options={DROPDOWN_DATA} />
+					</div>
 				</div>
 				<div>
 					<CustomTable

@@ -13,6 +13,7 @@ const AppLayout = ({ children }) => {
 
     // Function to toggle the sidebar state
     const toggleSidebar = () => {
+        // debugger;
         setSidebarOpen(!sidebarOpen);
     };
 
@@ -40,18 +41,17 @@ const AppLayout = ({ children }) => {
                 `}>
                     <Sidebar closeMenu={() => setSidebarOpen(false)} />
                 </div>
-                <div className='lg:ms-[20%] lg:hidden block p-6 bg-main-body-content'>
-                    <div className='lg:hidden flex items-center justify-between'>
-                        <div>{STRINGS.ADMIN_PANEL}</div>
-                        <MenuButton toggleMenu={toggleSidebar} />
+                <div className='lg:ms-[20%] lg:hidden block p-6 bg-main-body-content '>
+                    <div className='lg:hidden flex items-center justify-between '>
+                        <div className='text-2xl font-medium'>{STRINGS.ADMIN_PANEL}</div>
+                        <MenuButton onClick={toggleSidebar} />
                     </div>
                 </div>
-                <div className='lg:ms-[20%] p-6 bg-main-body-content'>
+                <div className='lg:ms-[20%] lg:p-6 px-6 bg-main-body-content'>
                     {children}
                 </div>
             </div>
             {sidebarOpen ? (
-
                 <div className="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-10"></div>
             ) : null}
         </>

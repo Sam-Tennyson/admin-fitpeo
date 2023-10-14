@@ -8,8 +8,8 @@ import {
 const CustomTable = ({ columns, rows }) => {
     return (
         <>
-            <CardBody className="overflow-scroll px-0">
-                <table className="mt-4 w-full min-w-max table-auto text-left">
+            <CardBody className="overflow-scroll p-0">
+                <table className=" w-full min-w-max table-auto text-left">
                     <thead>
                         <tr>
                             {columns.map((column) => (

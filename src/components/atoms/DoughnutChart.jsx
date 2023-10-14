@@ -28,7 +28,7 @@ const DoughnutChart = (props) => {
 	};
 
 	return (
-		<div className="min-h-[30vh]">
+		<div className="min-h-[300px] text-center m-auto w-full flex items-center justify-center">
 			<Doughnut data={data} options={options} />
 		</div>
 	);

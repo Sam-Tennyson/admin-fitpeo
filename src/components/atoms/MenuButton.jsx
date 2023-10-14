@@ -1,10 +1,10 @@
 import React from 'react'
 
-const MenuButton = ({toggleMenu}) => {
+const MenuButton = ({onClick}) => {
     return (
         <>
-            <button type="button" className="menu-button-class" onClick={toggleMenu}>
-                <span className="absolute -inset-0.5"></span>
+            <button type="button" className="menu-button-class" onClick={onClick}>
+                <span className=" -inset-0.5"></span>
                 <span className="sr-only">Open main menu</span>
                 {/* <!-- Menu open: "hidden", Menu closed: "block" --> */}
                 <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">

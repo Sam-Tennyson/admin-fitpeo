@@ -147,3 +147,18 @@ export const PIE_CHART = [
     {label: "B",value: "120"},
     {label: "C",value: "120"},
 ]
+
+export const DROPDOWN_DATA = [
+    {
+        label: "HTML", value: "HTML"
+    },
+    {
+        label: "React", value: "React"
+    },
+    {
+        label: "Tailwind", value: "Tailwind"
+    },
+    {
+        label: "Javascript", value: "Javascript"
+    },
+]
