@@ -1,6 +1,6 @@
 // libs
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Avatar } from '@material-tailwind/react'
 
 // constants
@@ -9,7 +9,10 @@ import { IMAGES } from '../../shared/Images'
 
 const Sidebar = (props) => {
     const { closeMenu } = props
+
     const navigate = useNavigate();
+    const location = useLocation();
+
     const handleSideClick = (data) => {
         navigate(data?.path)
         closeMenu()
@@ -33,14 +36,14 @@ const Sidebar = (props) => {
 
                 <aside className='flex flex-col text-xs'>
                     {DASHBOARD_OPTIONS.map((item) => (
-                        <div className='cursor-pointer flex items-center justify-between text-light-blue p-3 hover:rounded-md hover:bg-lighter-blue hover:text-white' key={item?.id}
+                        <div className={`cursor-pointer flex items-center justify-between text-light-blue p-3 mb-2 rounded-md hover:bg-lighter-blue hover:text-white ${item?.path === location?.pathname ?'bg-lighter-blue':""}`} key={item?.id}
                             onClick={() => handleSideClick(item)}
                         >
                             <Link className='flex items-center'>
                                 {item?.icon}
                                 <span className='ml-2'>{item?.value}</span>
                             </Link>
-                            <em>
+                            <em className={`${item?.path === location?.pathname ?"hidden": "" }`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                 </svg>
@@ -65,7 +68,6 @@ const Sidebar = (props) => {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }

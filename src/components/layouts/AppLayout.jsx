@@ -13,7 +13,6 @@ const AppLayout = ({ children }) => {
 
     // Function to toggle the sidebar state
     const toggleSidebar = () => {
-        // debugger;
         setSidebarOpen(!sidebarOpen);
     };
 

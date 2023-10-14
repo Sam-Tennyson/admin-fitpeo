@@ -2,7 +2,15 @@ import React from 'react'
 
 const Products = () => {
   return (
-    <div>Products</div>
+    <div className='h-screen'>
+      <h2 className='font-bold textl-lg'>
+        Products
+      </h2>
+      <div className='text-center'>
+
+        Comming Soon
+      </div>
+    </div>
   )
 }
 

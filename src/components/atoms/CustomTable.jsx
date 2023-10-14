@@ -42,7 +42,6 @@ const CustomTable = ({ columns, rows }) => {
                                     <tr key={row?.id}>
                                         {columns?.map((column) => {
                                             const value = row[column?.id]
-                                            console.log(row)
                                             return (
                                                 <td
                                                     key={column?.id}
