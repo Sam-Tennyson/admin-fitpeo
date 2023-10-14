@@ -7,8 +7,14 @@ import { Avatar } from '@material-tailwind/react'
 import { DASHBOARD_OPTIONS } from '../../shared/Constants'
 import { IMAGES } from '../../shared/Images'
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+    const { closeMenu } = props
     const navigate = useNavigate();
+    const handleSideClick = (data) => {
+        navigate(data?.path)
+        closeMenu()
+    }
+
     return (
         <>
             <div className='relative'>
@@ -18,12 +24,19 @@ const Sidebar = () => {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg> <span className='ml-2'>Dashboard</span>
                 </div>
+                <div className="absolute top-0 right-0 p-1 lg:hidden text-white cursor-pointer" onClick={closeMenu}>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </div>
+
                 <aside className='flex flex-col text-xs'>
                     {DASHBOARD_OPTIONS.map((item) => (
                         <div className='cursor-pointer flex items-center justify-between text-light-blue p-3 hover:rounded-md hover:bg-lighter-blue hover:text-white' key={item?.id}
-                            onClick={()=>navigate(item?.path)}
+                            onClick={() => handleSideClick(item)}
                         >
-                            <Link  className='flex items-center'>
+                            <Link className='flex items-center'>
                                 {item?.icon}
                                 <span className='ml-2'>{item?.value}</span>
                             </Link>
@@ -52,6 +65,7 @@ const Sidebar = () => {
                     </div>
                 </div>
             </div>
+
         </>
     )
 }

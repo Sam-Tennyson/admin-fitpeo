@@ -35,21 +35,25 @@ const AppLayout = ({ children }) => {
     return (
         <>
             <div className=" md:h-screen">
-                <div className={`fixed left-0 bottom-0 top-0 lg:w-1/5 bg-primary-blue p-2 lg:block  
-                                                w-64 z-10
-                                            ${sidebarOpen ? 'translate-x-0' : 'md:translate-x-0 -translate-x-full '}
-                                  transition-transform duration-300 ease-in-out
-                            `}>
-                    <Sidebar />
+                <div className={`fixed left-0 bottom-0 top-0 lg:w-1/5 bg-primary-blue p-2 lg:block w-64 z-20
+                    ${sidebarOpen ? 'translate-x-0' : 'lg:translate-x-0 -translate-x-full '} transition-transform duration-300 ease-in-out
+                `}>
+                    <Sidebar closeMenu={() => setSidebarOpen(false)} />
                 </div>
-                <div className='lg:ms-[20%] p-6 bg-main-body-content'>
+                <div className='lg:ms-[20%] lg:hidden block p-6 bg-main-body-content'>
                     <div className='lg:hidden flex items-center justify-between'>
                         <div>{STRINGS.ADMIN_PANEL}</div>
                         <MenuButton toggleMenu={toggleSidebar} />
                     </div>
+                </div>
+                <div className='lg:ms-[20%] p-6 bg-main-body-content'>
                     {children}
                 </div>
             </div>
+            {sidebarOpen ? (
+
+                <div className="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-10"></div>
+            ) : null}
         </>
     )
 }
