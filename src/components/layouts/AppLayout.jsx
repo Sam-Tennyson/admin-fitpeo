@@ -21,7 +21,7 @@ const AppLayout = ({ children }) => {
                         <MenuButton />
                     </div>
                 </div>
-                <div className=' lg:col-start-3 lg:col-end-13 col-start-4 col-end-13 col-span-full p-6 bg-main-body-content'>
+                <div className=' lg:col-start-3 lg:col-end-13 md:col-start-4 md:col-end-13 col-span-full p-6 bg-main-body-content'>
                     {children}
                 </div>
             </div>
