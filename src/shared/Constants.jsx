@@ -127,3 +127,23 @@ export const STATUS_DATA = [
         image_bg: "bg-[#ffceee]"
     },
 ]
+export const MONTH_ARRAY = [
+    {label: "Jan",value: "100"},
+    {label: "Feb",value: "50"},
+    {label: "Mar",value: "250"},
+    {label: "Apr",value: "200"},
+    {label: "May",value: "150"},
+    {label: "Jun",value: "240"},
+    {label: "Jul",value: "220"},
+    {label: "Aug",value: "200"},
+    {label: "Sep",value: "108"},
+    {label: "Oct",value: "222"},
+    {label: "Nov",value: "111"},
+    {label: "Dec",value: "250"},
+]
+
+export const PIE_CHART = [
+    {label: "A",value: "90"},
+    {label: "B",value: "120"},
+    {label: "C",value: "120"},
+]
