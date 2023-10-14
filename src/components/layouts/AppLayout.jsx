@@ -32,7 +32,6 @@ const AppLayout = ({ children }) => {
         };
     }, []);
 
-    console.log(sidebarOpen);
     return (
         <>
             <div className=" md:h-screen">
