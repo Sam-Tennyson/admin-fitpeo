@@ -8,7 +8,7 @@ import {
 const CustomTable = ({ columns, rows }) => {
     return (
         <>
-            <CardBody className="p-0">
+            <CardBody className="overflow-auto p-0">
                 <table className=" w-full min-w-max table-auto text-left">
                     <thead>
                         <tr>
